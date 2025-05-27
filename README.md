@@ -16,9 +16,19 @@
 
 ## 1. Развертывание из шаблона и структура проекта
 
-Для развертывания проекта необходимо установить [copier](https://github.com/copier-org/copier) и выполнить команду:
+Для развертывания проекта необходимо установить [copier](https://github.com/copier-org/copier) с расширением `copier-templates-extensions`.
+Пример:
+1. [Устанавливаем](https://docs.astral.sh/uv/getting-started/installation/) улучшенный  менеджер пакетов `uv`/`uvx`:
 ```bash
-$ copier bot-template bot-example
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+2. Устанавливаем `copier` + `copier-templates-extensions`:
+```bash
+uv tool install copier --with copier-templates-extensions
+```
+### Инициируем проект из этого шаблона, используя copier:
+```bash
+copier copy https://github.com/ExpressApp/bot-template.git mybot --trust
 ```  
 
 Структура шаблонного бота состоит из нескольких следующих пакетов и модулей:
